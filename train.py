@@ -12,7 +12,7 @@ df = pd.read_csv('./Data/health_data.csv')
 
 # Split data into X & Y
 y = df['Stroke']
-X = df.drop(columns=['Stroke'])
+X = df.drop(columns=['Stroke', 'Diabetes', 'Hypertension'])
 
 
 # Split into test and train at 70/30
