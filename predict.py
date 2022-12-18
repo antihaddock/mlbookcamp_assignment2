@@ -15,7 +15,7 @@ def predict_outcome(X, model):
     
     return y_pred, y_pred_prob 
 
-app = Flask('stroke_risk_prediction')
+app = Flask('classify')
 
 
 @app.route('/predict_outcome', methods=['POST'])
@@ -32,4 +32,4 @@ def predict_outcomes():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=3000)

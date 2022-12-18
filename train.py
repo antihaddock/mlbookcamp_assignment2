@@ -1,5 +1,6 @@
 import pandas as pd
-import pickle
+#import pickle
+import bentoml
 
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
@@ -27,5 +28,10 @@ model.fit(X, y)
 
 # ------------- Export trained model to pickle file -------------------------------------------------------
 
-with open('./Models/stroke-prediction.bin', 'wb') as f_out:
-    pickle.dump(model, f_out)
+# with open('./Models/stroke-prediction.bin', 'wb') as f_out:
+#     pickle.dump(model, f_out)
+
+
+#---------------- Save model with BentoML -------------------------------------------------------------------
+saved_model = bentoml.sklearn.save_model("Stroke_Model", model)
+print(f"Model saved: {saved_model}")
