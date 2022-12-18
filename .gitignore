@@ -1,2 +1,3 @@
-# AWS filee
+# AWS files
 .aws/*
+./__pycache__
